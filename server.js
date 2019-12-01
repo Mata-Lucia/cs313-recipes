@@ -9,6 +9,9 @@ const pool = new Pool({connectionString: connectionString});
 app.set("port", (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
 app.get('/getRecipes', getRecipes);
 
 app.listen(app.get("port"), function() {
@@ -16,7 +19,7 @@ app.listen(app.get("port"), function() {
 });
 
 function getRecipes(request, response) {
-    const id = request.query.id;
+    const id = Number(request.query.id);
 
     getRecipeFromDB(id, function(error, result) {
         if (error || result == null /*|| result.length != 1*/) {
@@ -24,7 +27,8 @@ function getRecipes(request, response) {
 		} else {
 			//const recipe = result[0];
             //response.status(200).json(recipe);
-            response.json(result[0]);
+            //response.json(result[0]);
+            response.render('recipes', { data: result });
 		}
     });
 }

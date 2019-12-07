@@ -28,7 +28,9 @@ function getRecipes(request, response) {
 			//const recipe = result[0];
             //response.status(200).json(recipe);
             //response.json(result[0]);
-            response.render('recipes', { data: result });
+            //response.render('recipes', { data: result });
+            const recipe = result[0];
+			response.status(200).json(recipe);
 		}
     });
 }

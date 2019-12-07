@@ -9,8 +9,12 @@
 <body>
     <h1>Recipes Manager</h1>
     <form action="/getRecipes" method="GET">
-        <label>Recipe ID</label><input type="text" name="id"><br>
-        <input type="submit" value="Get Ingredients">
+        <label>Recipe ID</label><input type="text" id="id"><br>
+        <button onclick="searchRecipe()">Search by id</button><br>
     </form>
+    <h1>Result</h1>
+    <ul id="ulrecipe">
+    </ul>
+   
 </body>
 </html>

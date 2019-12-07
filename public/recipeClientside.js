@@ -13,7 +13,7 @@ function searchRecipe() {
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
 
-			$("#ulrecipe").append("<li>" + recipe.ingredient_name + "</li>");
+			$("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
 		}
 	})
 }

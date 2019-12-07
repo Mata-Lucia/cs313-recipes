@@ -8,8 +8,8 @@ function searchRecipe() {
 		console.log("Back from the server with:");
         console.log(data);
         
-		for (var i = 0; i < data.list.length; i++) {
-			var recipe = data.list[i];
+		for (var i = 0; i < data.length; i++) {
+			var recipe = data[i];
 
 			$("#ulrecipe").append("<li>" + recipe.ingredient_name + "</li>");
 		}

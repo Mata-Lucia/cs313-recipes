@@ -14,7 +14,7 @@ function searchRecipe() {
             var recipe = data[i];
 
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
-            $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_step + "</li>");
+            $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
 		}
 	})
 }

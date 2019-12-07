@@ -28,7 +28,7 @@ function getRecipes(request, response) {
 			//const recipe = result[0];
             //response.status(200).json(recipe);
             //response.json(result[0]);
-            response.json(results);
+            response.render('recipes', { data: result });
 		}
     });
 }
@@ -39,7 +39,7 @@ function getRecipeFromDB(id, callback) {
     const sql = "SELECT recipe_name, ingredient_qty, ingredient_name, direction_number, direction_text FROM recipes JOIN recipe_ingredients ON recipes.recipe_id = recipe_ingredients.recipe_id JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id JOIN recipe_directions ON recipes.recipe_id = recipe_directions.recipe_id WHERE recipes.recipe_id = $1::int ";
     const params = [id];
 
-    pool.query(sql, params, function(err, db_results) {
+    pool.query(sql, params, function(err, result) {
 		// If an error occurred...
 		if (err) {
 			console.log("Error in query: ")
@@ -47,15 +47,8 @@ function getRecipeFromDB(id, callback) {
 			callback(err, null);
         }
         
-        //console.log("Found result: " + JSON.stringify(result.rows));
-        //callback(null, result.rows);
-
-        var results = {
-            success:true,
-            list:db_results.rows
-        };
-
-        callback(null, results);			
+        console.log("Found result: " + JSON.stringify(result.rows));
+        callback(null, result.rows);			
     });
 }
 

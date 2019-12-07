@@ -49,3 +49,15 @@ JOIN recipe_ingredients ON recipes.recipe_id = recipe_ingredients.recipe_id
 JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id
 JOIN recipe_directions ON recipes.recipe_id = recipe_directions.recipe_id
 WHERE recipes.recipe_id='1';
+
+-- Select title
+SELECT recipe_name FROM recipes WHERE recipe_id = 1;
+
+-- Select Ingredients
+SELECT ingredient_qty, ingredient_name FROM recipe_ingredients
+JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id
+WHERE recipe_id='1';
+
+-- Select Steps
+SELECT direction_number, direction_text FROM recipe_directions
+WHERE recipe_id='1';

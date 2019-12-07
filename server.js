@@ -79,5 +79,5 @@ app.get('/getRecipes', recipesController.getRecipes);
 
 
 app.listen(app.get("port"), function() {
-    console.log("Now listening for connection on port: ", app.get("port")); */
-});
+    console.log("Now listening for connection on port: ", app.get("port")); 
+});*/

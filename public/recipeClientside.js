@@ -4,7 +4,7 @@ function searchRecipe() {
     var id = $("#id").val();
     console.log("id: " + id);
     
-    $.get("/getRecipes", {id:id}, function(data) {
+    $.get('/getRecipes', {id:id}, function(data) {
 		console.log("Back from the server with:");
 		console.log(data);
 

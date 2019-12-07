@@ -11,7 +11,7 @@ function searchRecipe() {
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
             
-            $("#h1recipe").append(recipe.recipe_name);
+            $("#h1recipe").append(recipe[0].recipe_name);
 
 			$("#ulrecipe").append("<li>" + recipe.ingredient_name + "</li>");
 		}

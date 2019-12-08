@@ -43,7 +43,7 @@ INSERT INTO recipe_directions VALUES (DEFAULT, 1, 'Cook Pasta', 1);
 INSERT INTO recipe_directions VALUES (DEFAULT, 2, 'Add butter, milk and cheese', 1);
 INSERT INTO recipe_directions VALUES (DEFAULT, 3, 'Mix ingredients', 1);
 
-SELECT recipe_name, ingredient_qty, ingredient_name, direction_number, direction_text
+SELECT DISTINCT recipe_name, ingredient_qty, ingredient_name, direction_number, direction_text
 FROM recipes 
 JOIN recipe_ingredients ON recipes.recipe_id = recipe_ingredients.recipe_id
 JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id
@@ -59,3 +59,9 @@ WHERE recipe_id='1';
 SELECT direction_number, direction_text FROM recipe_directions
 WHERE recipe_id='1';
 
+SELECT recipe_name, ingredient_qty, ingredient_name, direction_number, direction_text
+FROM recipes 
+JOIN recipe_ingredients ON recipes.recipe_id = recipe_ingredients.recipe_id
+JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id
+JOIN recipe_directions ON recipes.recipe_id = recipe_directions.recipe_id
+WHERE recipes.recipe_name='Mac n Cheese';

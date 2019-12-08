@@ -50,9 +50,7 @@ function getRecipeFromDB(id, callback) {
 			callback(err, null);
         }
         
-        console.log("Found result: " + JSON.stringify(result[0].rows));
-        console.log("Found result: " + JSON.stringify(result[1].rows));
-        console.log("Found result: " + JSON.stringify(result[2].rows));
+        console.log("Found result: " + JSON.stringify(result.rows));
         callback(null, result.rows);			
     });
 }

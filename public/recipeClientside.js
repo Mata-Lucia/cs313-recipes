@@ -26,4 +26,14 @@ function searchRecipe() {
 }
 
 
+function addRecipe() {
+    var recipename = $("#recipename").val();
+    var ingredients = $("#ingredients").val();
+    var ingredientsqty = $("#ingredientsqty").val();
+    var stepnum = $("#stepnum").val();
+    var steptext = $("#steptext").val();
 
+    $.post('/insertRecipe', {recipename:recipename, ingredients:ingredients, ingredientsqty:ingredientsqty, stepnum:stepnum, steptext:steptext}, function() {
+        $("#thanks").append('<p>Thanks for adding a recipe!</p>');
+    })
+}

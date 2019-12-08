@@ -13,6 +13,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/getRecipes', getRecipes);
+app.post('/insertRecipe', insertRecipe);
 
 app.listen(app.get("port"), function() {
     console.log("Now listening for connection on port: ", app.get("port"));
@@ -52,5 +53,36 @@ function getRecipeFromDB(id, callback) {
         
         console.log("Found result: " + JSON.stringify(result.rows));
         callback(null, result.rows);			
+    });
+}
+
+function insertRecipe(request, response) {
+    const recipename = request.query.recipename;
+    const ingredients = request.query.ingredients;
+    const ingredientsqty = request.query.ingredientsqty;
+    const stepnum = request.query.stepnum;
+    const steptext = request.query.steptext;
+
+    insertRecipeDB(recipename, ingredients, ingredientsqty, stepnum, steptext, function(error, result) {
+        if (error || result == null /*|| result.length != 1*/) {
+			response.status(500).json({success: false, data: error});
+		} else {
+			response.status(200).json(result);
+		}
+    })
+}
+
+function insertRecipeDB(recipename, ingredients, ingredientsqty, stepnum, steptext, callback) {
+
+    const sql = "INSERT INTO recipes VALUES ($1)";
+    const params = [recipename];
+
+    pool.query(sql, params, function(err, result) {
+        if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+        }
+        callback(null, result.rows);
     });
 }

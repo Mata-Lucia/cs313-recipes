@@ -22,14 +22,14 @@
     </div>
 
     <h2>Add a Recipe</h2>
-    <form action="/insertRecipe">
-    <label>Name</label><input type="text" name="recipename"><br>
-    <label>Ingredients</label><input type="text" name="ingredients">
-    <label>Ingredient Quantity</label><input type="text" name="ingredientqty"><br>
-    <label>Step Number</label><input type="text" name="stepnum"><br>
-    <label>Step Text</label><input type="text" name="steptext">
-    <input type="submit">
+    <label>Name</label><input type="text" id="recipename"><br>
+    <label>Ingredients</label><input type="text" id="ingredients">
+    <label>Ingredient Quantity</label><input type="text" id="ingredientqty"><br>
+    <label>Step Number</label><input type="text" id="stepnum"><br>
+    <label>Step Text</label><input type="text" id="steptext">
+    <button onclick="addRecipe()">Add Recipe</button>
     </form>
+    <div id="thanks"></div>
 
 </body>
 </html>

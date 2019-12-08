@@ -12,9 +12,12 @@ function searchRecipe() {
         
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
+            var textingredient = [];
             
-            if ($('#resultdiv').find("#ulrecipe:contains('" + recipe.ingredient_name + "')").length = 0) {
-            $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");}
+            if (textingredient != recipe.ingredient_name) {
+            $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
+            textingredient += recipe.textingredient;
+        }
 
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
 		}

@@ -15,7 +15,7 @@ function searchRecipe() {
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
             
-            if (textingredient != recipe.ingredient_name) {
+            if (textingredient.ingredient_name != recipe.ingredient_name) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
             textingredient.ingredient_name.push(recipe.ingredient_name);
         }

@@ -16,7 +16,7 @@ function searchRecipe() {
             
             if (textingredient != recipe.ingredient_name) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
-            textingredient += recipe.textingredient;
+            textingredient += recipe.ingredient_name;
         }
 
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");

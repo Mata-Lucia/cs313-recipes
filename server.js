@@ -14,10 +14,13 @@ app.set('view engine', 'ejs');
 
 app.get('/getRecipes', getRecipes);
 app.post('/insertItem', insertItem);
+app.get('/getList', getList);
 
 app.listen(app.get("port"), function() {
     console.log("Now listening for connection on port: ", app.get("port"));
 });
+
+// Show Recipe
 
 function getRecipes(request, response) {
     const id = request.query.id;
@@ -88,3 +91,32 @@ function insertItemDB(qty, item, callback) {
 }
 
 // Show Shopping List
+function getList(request, response) {
+    
+    getListDB(function(error, result) {
+        if (error || result == null /*|| result.length != 1*/) {
+			response.status(500).json({success: false, data: error});
+		} else {
+			response.status(200).json(result);
+		}
+    });
+}
+
+function getListDB(callback) {
+    console.log("Getting list from DB");
+
+    const sql = "SELECT item_qty, item_name FROM shopping_list;"
+
+    pool.query(sql, function(err, result) {
+		// If an error occurred...
+		if (err) {
+			console.log("Error in query: ")
+			console.log(err);
+			callback(err, null);
+        }
+        
+        console.log("Found result: " + JSON.stringify(result.rows));
+        callback(null, result.rows);			
+    });
+
+}

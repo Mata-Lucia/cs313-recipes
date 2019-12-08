@@ -40,3 +40,20 @@ function addItem() {
         $("#thanksp").append("Thanks for adding a recipe!");
     })
 }
+
+function seeList() {
+    console.log("Finding list...");
+    $.get('/getList', function(data) {
+        console.log("Back from the server with:");
+        console.log(data);
+
+        $("#listh2").append("Your Shopping List");
+
+        for (var i = 0; i < data.length; i++) {
+            var list = data[i];
+
+            $("#listul").append("<li>" + list.item_qty + " " + list.item_name + "</li>");
+		}
+
+    })
+}

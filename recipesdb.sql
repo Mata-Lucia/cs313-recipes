@@ -76,3 +76,5 @@ INSERT INTO shopping_list VALUES (DEFAULT, 1, 'Milk');
 INSERT INTO shopping_list VALUES (DEFAULT, 2, 'Bread');
 INSERT INTO shopping_list VALUES (DEFAULT, 1, 'Cheese');
 INSERT INTO shopping_list VALUES (DEFAULT, 6, 'Apples');
+
+SELECT item_qty, item_name FROM shopping_list;

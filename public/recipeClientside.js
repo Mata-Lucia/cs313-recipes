@@ -9,15 +9,15 @@ function searchRecipe() {
         console.log(data);
 
         $("#h1recipe").append(data[0].recipe_name);
-        
-        var textingredient = [];
+
+        var textingredient = {ingredient_name:[]};
 
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
             
             if (textingredient != recipe.ingredient_name) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
-            textingredient.push(recipe.ingredient_name);
+            textingredient.ingredient_name.push(recipe.ingredient_name);
         }
 
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");

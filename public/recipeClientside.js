@@ -10,17 +10,16 @@ function searchRecipe() {
 
         $("#h1recipe").append(data[0].recipe_name);
 
-        var textingredient = {};
-        textingredient[0] = {ingredient_name: 'test' };
-
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
             
+            /* Fix repeats
             if (textingredient.ingredient_name != recipe.ingredient_name) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
             textingredient.ingredient_name.push(recipe.ingredient_name[i]);
-        }
+        }*/
 
+            $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
 		}
 	})

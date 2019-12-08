@@ -13,7 +13,7 @@ function searchRecipe() {
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
             
-            if ($('#resultdiv').find("#ulrecipe:contains('" + recipe.ingredient_name[i] + "')").length = 0) {
+            if ($('#resultdiv').find("#ulrecipe:contains('" + recipe[i].ingredient_name + "')").length = 0) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");}
 
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");

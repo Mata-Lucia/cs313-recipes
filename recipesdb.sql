@@ -65,3 +65,14 @@ JOIN recipe_ingredients ON recipes.recipe_id = recipe_ingredients.recipe_id
 JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id
 JOIN recipe_directions ON recipes.recipe_id = recipe_directions.recipe_id
 WHERE recipes.recipe_name='Mac n Cheese';
+
+CREATE TABLE shopping_list (
+    item_id SERIAL PRIMARY KEY NOT NULL,
+    item_qty INT,
+    item_name VARCHAR(45) NOT NULL
+);
+
+INSERT INTO shopping_list VALUES (DEFAULT, 1, 'Milk');
+INSERT INTO shopping_list VALUES (DEFAULT, 2, 'Bread');
+INSERT INTO shopping_list VALUES (DEFAULT, 1, 'Cheese');
+INSERT INTO shopping_list VALUES (DEFAULT, 6, 'Apples');

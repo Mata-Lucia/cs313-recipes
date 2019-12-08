@@ -22,15 +22,17 @@
         <ul id="ulrecipesteps"></ul>
     </div>
 
-    <h2>Add a Recipe</h2>
-    <label>Name</label><input type="text" id="recipename"><br>
-    <label>Ingredients</label><input type="text" id="ingredients">
-    <label>Ingredient Quantity</label><input type="text" id="ingredientqty"><br>
-    <label>Step Number</label><input type="text" id="stepnum"><br>
-    <label>Step Text</label><input type="text" id="steptext">
-    <button onclick="addRecipe()">Add Recipe</button>
+    <h2>Add to Your Shopping List</h2>
+    <label>Quantity</label><input type="text" id="qty"><br>
+    <label>Item</label><input type="text" id="item">
+    <button onclick="addItem()">Add to Your List</button>
     </form>
-    <div id="thanks"></div>
+    <div id="thanks">
+        <p id="thankp"></p>
+    </div>
+
+    <!-- See Your Shopping List -->
+
 
     <!--
     <h2>Find More Recipes</h2>

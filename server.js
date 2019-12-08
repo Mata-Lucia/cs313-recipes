@@ -13,7 +13,7 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/getRecipes', getRecipes);
-app.post('/insertRecipe', insertRecipe);
+app.post('/insertItem', insertItem);
 
 app.listen(app.get("port"), function() {
     console.log("Now listening for connection on port: ", app.get("port"));
@@ -56,14 +56,13 @@ function getRecipeFromDB(id, callback) {
     });
 }
 
-function insertRecipe(request, response) {
-    const recipename = request.query.recipename;
-    const ingredients = request.query.ingredients;
-    const ingredientsqty = request.query.ingredientsqty;
-    const stepnum = request.query.stepnum;
-    const steptext = request.query.steptext;
+// Insert Into Shopping List
 
-    insertRecipeDB(recipename, ingredients, ingredientsqty, stepnum, steptext, function(error, result) {
+function insertItem(request, response) {
+    const qty = request.query.qty;
+    const item = request.query.item;
+
+    insertItemDB(qty, item, function(error, result) {
         if (error || result == null /*|| result.length != 1*/) {
 			response.status(500).json({success: false, data: error});
 		} else {
@@ -72,10 +71,11 @@ function insertRecipe(request, response) {
     })
 }
 
-function insertRecipeDB(recipename, ingredients, ingredientsqty, stepnum, steptext, callback) {
+function insertItemDB(qty, item, callback) {
+    console.log("Inserting item into DB with qty: " + qty + " and item: " + item);
 
-    const sql = "INSERT INTO recipes VALUES ($1)";
-    const params = [recipename];
+    const sql = "INSERT INTO shopping_list VALUES (DEFAULT, $1, $2);";
+    const params = [qty, item];
 
     pool.query(sql, params, function(err, result) {
         if (err) {
@@ -86,3 +86,5 @@ function insertRecipeDB(recipename, ingredients, ingredientsqty, stepnum, stepte
         callback(null, result.rows);
     });
 }
+
+// Show Shopping List

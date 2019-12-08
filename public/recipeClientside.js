@@ -8,7 +8,7 @@ function searchRecipe() {
 		console.log("Back from the server with:");
         console.log(data);
 
-        $("#h2recipetitle").append("<h2>Your Recipe</h2>");
+        $("#h2recipetitle").append("Your Recipe");
         $("#h2recipe").append(data[0].recipe_name);
 
 		for (var i = 0; i < data.length; i++) {

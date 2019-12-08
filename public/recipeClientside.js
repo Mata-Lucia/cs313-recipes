@@ -35,7 +35,7 @@ function addItem() {
     var item = $("#item").val();
     console.log("Item: " + item);
 
-    $.post('/insertItem', {qty:qty, item:item}, function() {
+    $.post('/insertItem', {item:item}, function() {
         console.log("Back from the server");
         $("#thanksp").append("Thanks for adding a recipe!");
     })

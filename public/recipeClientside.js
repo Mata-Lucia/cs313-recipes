@@ -10,7 +10,7 @@ function searchRecipe() {
 
         $("#h1recipe").append(data[0].recipe_name);
 
-        var textingredient = {ingredient_name:[]};
+        var textingredient = {ingredient_name};
 
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];

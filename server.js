@@ -40,7 +40,7 @@ function getRecipeFromDB(id, callback) {
 
     const sql = "SELECT recipe_name FROM recipes WHERE recipe_id = $1::int; SELECT ingredient_qty, ingredient_name FROM recipe_ingredients JOIN ingredients ON recipe_ingredients.ingredient_id = ingredients.ingredient_id WHERE recipe_id = $1::int; SELECT direction_number, direction_text FROM recipe_directions WHERE recipe_id = $1::int; ";
     
-    const params = [id, id, id];
+    const params = [id];
 
     pool.query(sql, params, function(err, result) {
 		// If an error occurred...

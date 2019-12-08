@@ -20,7 +20,7 @@ app.listen(app.get("port"), function() {
 });
 
 function getRecipes(request, response) {
-    const id = Number(request.query.id);
+    const id = request.query.id;
 
     getRecipeFromDB(id, function(error, result) {
         if (error || result == null /*|| result.length != 1*/) {

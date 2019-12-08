@@ -12,8 +12,11 @@ function searchRecipe() {
         
 		for (var i = 0; i < data.length; i++) {
             var recipe = data[i];
+            
+            while (recipe.ingredient_name != recipe.ingredient_name) {
+            $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>"); }
 
-            $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
+
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
 		}
 	})

@@ -10,6 +10,8 @@
 </head>
 <body>
     <h1>Recipes Manager</h1>
+
+    <h2>Find a Recipe</h2>
     <label>Recipe ID</label><input type="text" id="id"><br>
     <button onclick="searchRecipe()">Search by id</button><br>
     <h1>Result</h1>
@@ -18,6 +20,16 @@
         <ul id="ulrecipe"></ul>
         <ul id="ulrecipesteps"></ul>
     </div>
-   
+
+    <h2>Add a Recipe</h2>
+    <form action="/insertRecipe">
+    <label>Name</label><input type="text" name="recipename"><br>
+    <label>Ingredients</label><input type="text" name="ingredients">
+    <label>Ingredient Quantity</label><input type="text" name="ingredientqty"><br>
+    <label>Step Number</label><input type="text" name="stepnum">
+    <label>Step Text</label><input type="text" name="steptext">
+    <input type="submit">
+    </form>
+
 </body>
 </html>

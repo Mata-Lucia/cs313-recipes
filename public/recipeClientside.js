@@ -19,14 +19,14 @@ function searchRecipe() {
         for (var i = 0; i < 12; i++) {
             var recipe = data[i];
             if ( i % 4 == 0) {
-                $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
+                $("#ulrecipesteps").append("<li>" + recipe.direction_number + ". " + recipe.direction_text + "</li>");
             }
         }
 	})
 }
 
 
-function addItem() {
+/*function addItem() {
     console.log("Adding item...");
 
     var qty = $("#qty").val();
@@ -34,11 +34,11 @@ function addItem() {
     var item = $("#item").val();
     console.log("Item: " + item);
 
-    $.post('/insertItem', {qty:qty, item:item}, function() {
+    $.post('/insertItem', function() {
         console.log("Back from the server");
         $("#thanksp").append("Thanks for adding a recipe!");
     })
-}
+}*/
 
 function seeList() {
     console.log("Finding list...");

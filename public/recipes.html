@@ -23,9 +23,10 @@
     </div>
 
     <h2>Add to Your Shopping List</h2>
-    <label>Quantity</label><input type="text" id="qty" name="qty"><br>
-    <label>Item</label><input type="text" id="item" name="item">
-    <button onclick="addItem()">Add to Your List</button>
+    <form method="post" action="/insertItem">
+        <label>Quantity</label><input type="text" id="qty" name="qty"><br>
+        <label>Item</label><input type="text" id="item" name="item">
+        <input type='submit' value='Add to Your List'></input>
     </form>
     <div id="thanks">
         <p id="thankp"></p>

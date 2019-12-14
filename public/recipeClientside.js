@@ -28,14 +28,14 @@ function searchRecipe() {
 
 function addItem() {
     console.log("Adding item...");
-
     var qty = $("#qty").val();
     console.log("Quantity: " + qty);
     var item = $("#item").val();
     console.log("Item: " + item);
 
-    $.post('/insertItem', function() {
-        console.log("Back from the server");
+    $.post('/insertItem', function(data) {
+        console.log("Back from the server after inserting:");
+        console.log(data);
         $("#thanksp").append("Added to your list!");
     })
 }

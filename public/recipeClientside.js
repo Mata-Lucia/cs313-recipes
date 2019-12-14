@@ -18,7 +18,7 @@ function searchRecipe() {
             if (textingredient.ingredient_name != recipe.ingredient_name) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
             textingredient.ingredient_name.push(recipe.ingredient_name[i]);
-        }*/
+            }*/
 
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
@@ -35,7 +35,7 @@ function addItem() {
     var item = $("#item").val();
     console.log("Item: " + item);
 
-    $.post('/insertItem', {item:item}, function() {
+    $.post('/insertItem', {qty:qty, item:item}, function() {
         console.log("Back from the server");
         $("#thanksp").append("Thanks for adding a recipe!");
     })

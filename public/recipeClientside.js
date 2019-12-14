@@ -13,17 +13,15 @@ function searchRecipe() {
 
 		for (var i = 0; i < 4; i++) {
             var recipe = data[i];
-            
-            /* Fix repeats
-            if (textingredient.ingredient_name != recipe.ingredient_name) {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
-            textingredient.ingredient_name.push(recipe.ingredient_name[i]);
-            }*/
-
-            $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
+        }
+        
+        for (var i = 1; i < 12; i++) {
+            var recipe = data[i];
+            if (i % 4 == 0) {
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
-		}
-	})
+            }
+	    }
 }
 
 

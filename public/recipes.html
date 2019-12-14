@@ -11,31 +11,48 @@
 <body>
     <h1>Recipes Manager</h1>
 
-    <h2>Find a Recipe</h2>
-    <p>Give "Mac n Cheese" a try!</p>
-    <label>Recipe Name:</label><input type="text" id="id"><br>
-    <button onclick="searchRecipe()">Search by Name</button><br>
-    <div id="resultdiv">
-        <h2 id="h2recipetitle"></h2>
-        <h2 id="h2recipe"></h2>
-        <ul id="ulrecipe"></ul>
-        <ul id="ulrecipesteps"></ul>
+    <div class="container">
+    <div>
+        <h2>Find a Recipe</h2>
+        <p>Give "Mac n Cheese" a try!</p>
+        <div class="form">
+            <label>Recipe Name:</label><br>
+            <input type="text" id="id"><br>
+            <button onclick="searchRecipe()">Search by Name</button><br>
+        </div>
+        <div id="resultdiv">
+            <h2 id="h2recipetitle"></h2>
+            <h2 id="h2recipe"></h2>
+            <ul id="ulrecipe"></ul>
+            <ul id="ulrecipesteps"></ul>
+        </div>
     </div>
 
-    <h2>Add to Your Shopping List</h2>
-        <label>Quantity</label><input type="text" id="qty" name="qty"><br>
-        <label>Item</label><input type="text" id="item" name="item"><br>
-        <button onclick="addItem()">Add Item</button><br>
-    <div id="thanks">
-        <p id="thankp"></p>
-        <p id="error"></p>
+    <div>
+        <h2>Add to Your Shopping List</h2>
+        <div class="form">
+            <label>Quantity</label><br>
+            <input type="text" id="qty" name="qty"><br>
+            <label>Item</label><br>
+            <input type="text" id="item" name="item"><br>
+            <button onclick="addItem()">Add Item</button><br>
+        </div>
+        <div id="thanks">
+            <p id="thankp"></p>
+            <p id="error"></p>
+        </div>
     </div>
 
-    <h2>See Your Shopping List</h2>
-    <button onclick="seeList()">Go!</button>
-    <div id="listdiv">
-        <h2 id="listh2"></h2>
-        <ul id="listul"></ul>
+    <div>
+        <h2>See Your Shopping List</h2>
+        <div class="form">
+            <button onclick="seeList()">Go!</button>
+        </div>
+        <div id="listdiv">
+            <h2 id="listh2"></h2>
+            <ul id="listul"></ul>
+        </div>
+    </div>
     </div>
 
 </body>

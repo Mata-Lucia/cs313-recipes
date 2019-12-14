@@ -48,7 +48,7 @@ function addItem() {
         "data": {qty, item},
         "success": function(data) {
             //show content
-            $("#thanksp").append("Added to your list!");
+            alert('Item added!')
         },
         error: function(jqXHR, textStatus, err) {
             //show error message

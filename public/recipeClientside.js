@@ -26,7 +26,7 @@ function searchRecipe() {
 }
 
 
-/*function addItem() {
+function addItem() {
     console.log("Adding item...");
 
     var qty = $("#qty").val();
@@ -36,9 +36,9 @@ function searchRecipe() {
 
     $.post('/insertItem', function() {
         console.log("Back from the server");
-        $("#thanksp").append("Thanks for adding a recipe!");
+        $("#thanksp").append("Added to your list!");
     })
-}*/
+}
 
 function seeList() {
     console.log("Finding list...");

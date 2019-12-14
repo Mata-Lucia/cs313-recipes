@@ -16,16 +16,12 @@ function searchRecipe() {
             $("#ulrecipe").append("<li>" + recipe.ingredient_qty + " " + recipe.ingredient_name + "</li>");
         }
         
-        for (var i = 1; i < 12; i++) {
+        for (var i = 0; i < 12; i++) {
             var recipe = data[i];
             if ( i % 4 == 0) {
                 $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
             }
         }
-
-
-
-
 	})
 }
 

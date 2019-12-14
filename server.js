@@ -1,7 +1,13 @@
 var express = require("express");
 var app = express();
-var bodyParser = require('body-parser');
-app.use(bodyParser());
+
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+})); 
+app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.urlencoded()); // to support URL-encoded bodies
 
 const { Pool } = require("pg");
 
@@ -64,8 +70,8 @@ function getRecipeFromDB(id, callback) {
 // Insert Into Shopping List
 
 function insertItem(request, response) {
-    console.log(request.qty);
-    console.log(request.item);
+    console.log(request.body.qty);
+    console.log(request.body.item);
     var qty = request.qty;
     var item = request.item;
     /*const qty = request.query.qty;

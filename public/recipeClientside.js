@@ -22,7 +22,7 @@ function searchRecipe() {
             $("#ulrecipesteps").append("<li>" + recipe.direction_number + " " + recipe.direction_text + "</li>");
             }
 	    }
-}
+});
 
 
 function addItem() {

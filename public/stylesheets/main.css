@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:800&display=swap');
 
 body {
-    height:200vh;
-    width:100vw;
-    background:linear-gradient(160deg, #2EC4B6, #2EC4B6 15%, white 15%, white);
+    background:linear-gradient(160deg, #2EC4B6, #2EC4B6 25%, rgb(224, 226, 228) 25%, rgb(224, 226, 228));
+    width: 90%;
+    margin: 0 auto;
 }
 
 h1, h2 {
@@ -14,14 +14,18 @@ h1, h2 {
 p, label, li {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 h1 {
-    margin-top: 10%;
+    margin-top: 14%;
+    margin-bottom: 7%;
     font-size: 4rem;
 }
 
+h2 {
+    font-size: 1.5rem;
+}
 .form {
     display: block;
     text-align: center;
@@ -37,9 +41,26 @@ button {
     font-size: 20px;
     background-color: #2EC4B6;
     color: #F1E8B8;
+    box-shadow: 0 1px 1px 1px rgb(39, 155, 143);
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(19, 99, 91);
 }
 
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 3%;
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.section {
+    background-color: #F1E8B8;
+    border-radius: 25px;
+    box-shadow: 0 2px 2px 2px rgb(202, 195, 151);
 }

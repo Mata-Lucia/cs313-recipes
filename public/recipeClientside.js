@@ -55,10 +55,10 @@ function addItem() {
         // Message to notify success submition
         alert("Item successfully added!");
 
-        let newHTML = `<span>` + result + `</span>`;
+        $("#thanksp").append("Added to your list!");
 
-        $("#thankp").html(newHTML);
-
+        /*let newHTML = `<span>` + result + `</span>`;
+        $("#thankp").html(newHTML);*/
         return;
     })
     .catch( err => {

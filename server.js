@@ -1,5 +1,7 @@
 var express = require("express");
 var app = express();
+var bodyParser = require('body-parser');
+app.use(bodyParser());
 
 const { Pool } = require("pg");
 
@@ -62,10 +64,14 @@ function getRecipeFromDB(id, callback) {
 // Insert Into Shopping List
 
 function insertItem(request, response) {
-    const qty = request.query.qty;
+    console.log(request.qty);
+    console.log(request.item);
+    var qty = request.qty;
+    var item = request.item;
+    /*const qty = request.query.qty;
     console.log(qty);
     const item = request.query.item;
-    console.log(item);
+    console.log(item);*/
 
     insertItemDB(qty, item, function(error, result) {
         if (error || result == null /*|| result.length != 1*/) {

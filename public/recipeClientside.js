@@ -11,7 +11,7 @@ function searchRecipe() {
         $("#h2recipetitle").append("Your Recipe");
         $("#h2recipe").append(data[0].recipe_name);
 
-		for (var i = 0; i < data.length; i++) {
+		for (var i = 0; i < 4; i++) {
             var recipe = data[i];
             
             /* Fix repeats

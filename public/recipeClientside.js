@@ -45,10 +45,18 @@ function addItem() {
     $.ajax({
         "url": "/insertItem",
         "method": "POST",
-        "data": {qty, item}
+        "data": {qty, item},
+        "success": function(data) {
+            //show content
+            $("#thanksp").append("Added to your list!");
+        },
+        error: function(jqXHR, textStatus, err) {
+            //show error message
+            alert('text status '+textStatus+', err '+err)
+        }
     })
 
-    .then( result => {
+    /*.then( result => {
         // On success empty all the input fields.
         $("#qty").val('');
         $("#item").val('');
@@ -57,8 +65,8 @@ function addItem() {
 
         $("#thanksp").append("Added to your list!");
 
-        /*let newHTML = `<span>` + result + `</span>`;
-        $("#thankp").html(newHTML);*/
+        let newHTML = `<span>` + result + `</span>`;
+        $("#thankp").html(newHTML);
         return;
     })
     .catch( err => {
@@ -70,7 +78,7 @@ function addItem() {
         $("#error").html(newHTML);
 
         return;
-    });
+    });*/
 }
 
 function seeList() {

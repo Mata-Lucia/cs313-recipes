@@ -72,8 +72,8 @@ function getRecipeFromDB(id, callback) {
 function insertItem(request, response) {
     console.log(request.body.qty);
     console.log(request.body.item);
-    var qty = request.qty;
-    var item = request.item;
+    var qty = request.body.qty;
+    var item = request.body.item;
     /*const qty = request.query.qty;
     console.log(qty);
     const item = request.query.item;

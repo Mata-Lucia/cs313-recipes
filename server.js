@@ -74,10 +74,6 @@ function insertItem(request, response) {
     console.log(request.body.item);
     var qty = request.body.qty;
     var item = request.body.item;
-    /*const qty = request.query.qty;
-    console.log(qty);
-    const item = request.query.item;
-    console.log(item);*/
 
     insertItemDB(qty, item, function(error, result) {
         if (error || result == null /*|| result.length != 1*/) {

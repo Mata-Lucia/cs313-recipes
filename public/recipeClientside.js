@@ -27,18 +27,6 @@ function searchRecipe() {
 
 
 function addItem() {
-    /*console.log("Adding item...");
-    var qty = $("#qty").val();
-    console.log("Quantity: " + qty);
-    var item = $("#item").val();
-    console.log("Item: " + item);
-
-    $.post('/insertItem', function(data) {
-        console.log("Back from the server after inserting:");
-        console.log(data);
-        $("#thanksp").append("Added to your list!");
-    })*/
-
     var qty = $("#qty").val();
     var item = $("#item").val();
 
@@ -55,30 +43,6 @@ function addItem() {
             alert('text status '+textStatus+', err '+err)
         }
     })
-
-    /*.then( result => {
-        // On success empty all the input fields.
-        $("#qty").val('');
-        $("#item").val('');
-        // Message to notify success submition
-        alert("Item successfully added!");
-
-        $("#thanksp").append("Added to your list!");
-
-        let newHTML = `<span>` + result + `</span>`;
-        $("#thankp").html(newHTML);
-        return;
-    })
-    .catch( err => {
-        // Notify in case some error occured
-        alert("An error occured.");
-
-        let newHTML = `<span>` + result + `</span>`;
-
-        $("#error").html(newHTML);
-
-        return;
-    });*/
 }
 
 function seeList() {

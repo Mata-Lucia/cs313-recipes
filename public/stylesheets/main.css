@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway&display=swap');
+
+h1, h2 {
+    font-family: 'Raleway', sans-serif;
+}
+
+p, label, li {
+    font-family: 'Montserrat', sans-serif;
+}

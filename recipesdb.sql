@@ -79,13 +79,4 @@ INSERT INTO shopping_list VALUES (DEFAULT, 6, 'Apples');
 
 SELECT item_qty, item_name FROM shopping_list;
 
-SELECT direction_number, recipe_name, ingredient_qty, ingredient_name, direction_text 
-FROM recipes JOIN recipe_ingredients 
-ON recipes.recipe_id = recipe_ingredients.recipe_id 
-JOIN ingredients 
-ON recipe_ingredients.ingredient_id = ingredients.ingredient_id 
-JOIN recipe_directions 
-ON recipes.recipe_id = recipe_directions.recipe_id 
-WHERE recipes.recipe_id = 1
-GROUP BY direction_number, ingredient_name, recipe_name, ingredient_qty, direction_text;
 

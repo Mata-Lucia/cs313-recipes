@@ -9,7 +9,12 @@ function searchRecipe() {
         console.log(data);
 
         $("#h2recipetitle").append("Your Recipe");
-        $("#h2recipe").append(data[0].recipe_name);
+
+        if (data = null) {
+            $("#h2recipe").append('Please enter Mac n Cheese');
+        } else {
+            $("#h2recipe").append(data[0].recipe_name);
+        }
 
 		for (var i = 0; i < 4; i++) {
             var recipe = data[i];
@@ -38,7 +43,7 @@ function addItem() {
             //show content
             alert('Item added!')
         },
-        error: function(jqXHR, textStatus, err) {
+        "error": function(jqXHR, textStatus, err) {
             //show error message
             alert('text status '+textStatus+', err '+err)
         }

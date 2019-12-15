@@ -57,10 +57,14 @@ button:hover {
     grid-gap: 3%;
 }
 
+ul,li { list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0; }
+
 ul {
-    list-style-type: none;
     padding-bottom: 2%;
-  }
+}
 
 .section {
     background-color: rgb(195, 224, 221);

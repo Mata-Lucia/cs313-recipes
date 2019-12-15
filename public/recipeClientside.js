@@ -40,11 +40,9 @@ function addItem() {
         "method": "POST",
         "data": {qty, item},
         "success": function(data) {
-            //show content
             alert('Item added!')
         },
         "error": function(jqXHR, textStatus, err) {
-            //show error message
             alert('Please enter a number in the Quantity box.')
         }
     })

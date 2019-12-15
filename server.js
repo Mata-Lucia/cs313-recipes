@@ -6,8 +6,6 @@ app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
-//app.use(express.json());       // to support JSON-encoded bodies
-//app.use(express.urlencoded()); // to support URL-encoded bodies
 
 const { Pool } = require("pg");
 const connectionString = process.env.DATABASE_URL || "postgress://luciamata:phantom09@localhost:5432/recipesdb"
@@ -33,14 +31,9 @@ function getRecipes(request, response) {
     const id = request.query.id;
 
     getRecipeFromDB(id, function(error, result) {
-        if (error || result == null /*|| result.length != 1*/) {
+        if (error || result == null) {
             response.status(500).json({success: false, data: error});
 		} else {
-			//const recipe = result[0];
-            //response.status(200).json(recipe);
-            //response.json(result[0]);
-            //response.render('recipes', { data: result });
-            //const recipe = result[0];
 			response.status(200).json(result);
 		}
     });
@@ -54,7 +47,6 @@ function getRecipeFromDB(id, callback) {
     const params = [id];
 
     pool.query(sql, params, function(err, result) {
-		// If an error occurred...
 		if (err) {
 			console.log("Error in query: ")
 			console.log(err);
@@ -117,7 +109,6 @@ function getListDB(callback) {
     const sql = "SELECT item_qty, item_name FROM shopping_list;"
 
     pool.query(sql, function(err, result) {
-		// If an error occurred...
 		if (err) {
 			console.log("Error in query: ")
 			console.log(err);

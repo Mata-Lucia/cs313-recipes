@@ -45,7 +45,7 @@ function addItem() {
         },
         "error": function(jqXHR, textStatus, err) {
             //show error message
-            alert('text status '+textStatus+', err '+err)
+            alert('Please enter a quantity (only numbers) and the name of the item.')
         }
     })
 }

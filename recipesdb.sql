@@ -96,4 +96,6 @@ INSERT INTO shopping_list VALUES (DEFAULT, 6, 'Apples');
 
 SELECT item_qty, item_name FROM shopping_list;
 
+DELETE FROM shopping_list 
+WHERE item_id = 7;
 

@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:800&display=swap');
 
+/* Layout */
+
 body {
     background:linear-gradient(160deg, #2EC4B6, #2EC4B6 20%, rgb(224, 226, 228) 20%, rgb(224, 226, 228));
     width: 90%;
     height: 200vh;
     margin: 0 auto;
 }
+
+/* Text */
 
 h1, h2 {
     font-family: 'Raleway', sans-serif;
@@ -32,6 +36,9 @@ h1 {
 h2 {
     font-size: 1.5rem;
 }
+
+/* Forms */
+
 .form {
     display: block;
     text-align: center;
@@ -55,11 +62,21 @@ button:hover {
     background-color: rgb(19, 99, 91);
 }
 
+/* Sections */
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 3%;
 }
+
+.section {
+    background-color: rgb(195, 224, 221);
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 2px rgb(171, 202, 199);
+}
+
+/* Results */
 
 ul,li { list-style-type: none;
     list-style-position:inside;
@@ -68,10 +85,4 @@ ul,li { list-style-type: none;
 
 ul {
     padding-bottom: 2%;
-}
-
-.section {
-    background-color: rgb(195, 224, 221);
-    border-radius: 2px;
-    box-shadow: 0 2px 2px 2px rgb(171, 202, 199);
 }

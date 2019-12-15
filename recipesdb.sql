@@ -22,8 +22,8 @@ CREATE TABLE recipe_directions (
     recipe_id INT REFERENCES recipes(recipe_id)
 );
 
-ALTER TABLE recipe_ingredients
-ALTER COLUMN ingredient_qty TYPE VARCHAR(45);
+--ALTER TABLE recipe_ingredients
+--ALTER COLUMN ingredient_qty TYPE VARCHAR(45);
 
 INSERT INTO recipes VALUES (DEFAULT, 'Mac n Cheese');
 INSERT INTO recipes VALUES (DEFAULT, 'Pasta Pomodoro');
@@ -98,4 +98,3 @@ SELECT item_qty, item_name FROM shopping_list;
 
 DELETE FROM shopping_list 
 WHERE item_id = 7;
-

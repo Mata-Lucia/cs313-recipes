@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat|Raleway:800&display=swap');
 
 body {
-    background:linear-gradient(160deg, #2EC4B6, #2EC4B6 15%, rgb(224, 226, 228) 15%, rgb(224, 226, 228));
+    background:linear-gradient(160deg, #2EC4B6, #2EC4B6 20%, rgb(224, 226, 228) 20%, rgb(224, 226, 228));
     width: 90%;
     height: 200vh;
     margin: 0 auto;

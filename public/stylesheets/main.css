@@ -10,6 +10,7 @@ body {
 h1, h2 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
+    text-shadow: .1em .1em 0 rgba(0,0,0,0.2);   
 }
 
 p, label, li {
@@ -62,7 +63,7 @@ ul {
   }
 
 .section {
-    background-color: #F1E8B8;
-    border-radius: 25px;
-    box-shadow: 0 2px 2px 2px rgb(202, 195, 151);
+    background-color: rgb(195, 224, 221);
+    border-radius: 2px;
+    box-shadow: 0 2px 2px 2px rgb(171, 202, 199);
 }

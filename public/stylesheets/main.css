@@ -10,7 +10,7 @@ body {
 h1, h2 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
-    text-shadow: .1em .1em 0 rgba(0,0,0,0.2);   
+    text-shadow: .05em .05em 0 rgba(0,0,0,0.2);   
 }
 
 p, label, li {

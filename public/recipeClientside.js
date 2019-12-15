@@ -11,7 +11,7 @@ function searchRecipe() {
         $("#h2recipetitle").append("Your Recipe");
 
         if (data.length == 0) {
-            $("#errorrecipe").append("Please enter Mac n Cheese");
+            $("#errorrecipe").append("Please enter Mac n Cheese or Spaghetti and Meatballs");
         } else {
             $("#h2recipe").append(data[0].recipe_name);
         }

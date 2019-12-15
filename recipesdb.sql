@@ -32,16 +32,33 @@ INSERT INTO ingredients VALUES (DEFAULT, 'Pasta');
 INSERT INTO ingredients VALUES (DEFAULT, 'Milk');
 INSERT INTO ingredients VALUES (DEFAULT, 'Butter');
 INSERT INTO ingredients VALUES (DEFAULT, 'Cheedar Cheese');
+
 INSERT INTO ingredients VALUES (DEFAULT, 'Tomato Sauce');
+INSERT INTO ingredients VALUES (DEFAULT, 'Meatballs');
+INSERT INTO ingredients VALUES (DEFAULT, 'Parmesan Cheese');
+INSERT INTO ingredients VALUES (DEFAULT, 'Spaghetti');
 
 INSERT INTO recipe_ingredients VALUES (DEFAULT, '1lb', 1, 1);
 INSERT INTO recipe_ingredients VALUES (DEFAULT, '1cup', 1, 2);
 INSERT INTO recipe_ingredients VALUES (DEFAULT, '1/2cup', 1, 3);
 INSERT INTO recipe_ingredients VALUES (DEFAULT, '2cups', 1, 4);
 
+INSERT INTO recipe_ingredients VALUES (DEFAULT, '2cups', 2, 5);
+INSERT INTO recipe_ingredients VALUES (DEFAULT, '1/2lbs', 2, 6);
+INSERT INTO recipe_ingredients VALUES (DEFAULT, '1cup', 2, 7);
+INSERT INTO recipe_ingredients VALUES (DEFAULT, '1lbs', 2, 8);
+
 INSERT INTO recipe_directions VALUES (DEFAULT, 1, 'Cook Pasta', 1);
 INSERT INTO recipe_directions VALUES (DEFAULT, 2, 'Add butter, milk and cheese', 1);
 INSERT INTO recipe_directions VALUES (DEFAULT, 3, 'Mix ingredients', 1);
+
+INSERT INTO recipe_directions VALUES (DEFAULT, 1, 'Cook pasta and meatballs separately', 2);
+INSERT INTO recipe_directions VALUES (DEFAULT, 2, 'Mix with tomato sauce', 2);
+INSERT INTO recipe_directions VALUES (DEFAULT, 3, 'Add parmesan cheese', 2);
+
+UPDATE recipes 
+SET recipe_name = 'Spaghetti and Meatballs'
+WHERE recipe_id = 2;
 
 SELECT DISTINCT recipe_name, ingredient_qty, ingredient_name, direction_number, direction_text
 FROM recipes 
